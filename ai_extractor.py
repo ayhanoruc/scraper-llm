@@ -6,7 +6,7 @@ from langchain.chains import (create_extraction_chain,
 from langchain.chat_models import ChatOpenAI
 
 openai_api_key = OPENAI_API_KEY
-print(openai_api_key)
+
 
 llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo",
                  openai_api_key=openai_api_key)
