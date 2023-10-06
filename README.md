@@ -7,57 +7,22 @@ Create a schema in `schemas.py`, pick a url, and use them with `scrape_with_play
 
 Tip: each website has the bulk of content either in `<p>`, `<span>` or `<h>` tags. For best performance, choose a combination of tags that work for you.
 
-### Example
-
-1. Define the schema of the website you want to scrape in `schemas.py` (Pydantic class or dictionary are both fine):
-
-   ```python
-   class SchemaNewsWebsites(BaseModel):
-       news_headline: str
-       news_short_summary: str
-   ```
-
-2. To start scraping, in `main.py`, run something like this:
-
-   ```python
-   asyncio.run(scrape_with_playwright(
-           url="https://www.bbc.com",
-           tags=["span"],
-           schema_pydantic=SchemaNewsWebsites
-       ))
-   ```
-
 ## Setup
 
 ### 1. Create a new Python virtual environment
 
-`python -m venv virtual-env` or `python3 -m venv virtual-env` (Mac)
+`conda create -p venv python=3.11 -y`
 
-`py -m venv virtual-env` (Windows 11)
+### 3. Install dependencies 
 
-### 2. Activate virtual environment
+Run `pip install -r requirements.txt`
 
-`.\virtual-env\Scripts\activate` (Windows)
 
-`source virtual-env/bin/activate` (Mac)
-
-### 3. Install dependencies using Poetry
-
-Run `poetry install --sync` or `poetry install`
-
-### 4. Install playwright
-
-```bash
-playwright install
-```
-
-### 5. Create a new `.env` file to store OpenAI's API key
+### 5. Create a new `constants.py` file to store OpenAI's API key
 
 ```text
 OPENAI_API_KEY=XXXXXX
 ```
-
-## Usage
 
 ### Run locally
 
@@ -65,13 +30,4 @@ OPENAI_API_KEY=XXXXXX
 python main.py
 ```
 
-## Additional Information
 
-- Add onto this a FastAPI server to serve this as an API endpoint for ease of use.
-
-- Use caution when scraping. Don't do anything I wouldn't do (illegal)
-
-- P.S I've added this functionality to LangChain [in this PR](https://github.com/langchain-ai/langchain/pull/8732). You can read [the official docs here.](https://python.langchain.com/docs/use_cases/web_scraping#quickstart)
-
-
-pip install -r requirements.txt
