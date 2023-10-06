@@ -1,0 +1,6 @@
+langchain
+fastapi
+openai
+beautifulsoup4
+python-dotenv
+playwright
