@@ -13,12 +13,12 @@ Tip: each website has the bulk of content either in `<p>`, `<span>` or `<h>` tag
 
 `conda create -p venv python=3.11 -y`
 
-### 3. Install dependencies 
+### 2. Install dependencies 
 
 Run `pip install -r requirements.txt`
 
 
-### 5. Create a new `constants.py` file to store OpenAI's API key
+### 3. Create a new `constants.py` file to store OpenAI's API key
 
 ```text
 OPENAI_API_KEY=XXXXXX
